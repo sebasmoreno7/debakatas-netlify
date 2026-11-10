@@ -1,11 +1,20 @@
-# React routing exercise
+# debakatas-netlify
 
-Small historical Create React App exercise. `src/App.js` configures a home route and a 404 fallback; `src/Home.jsx` identifies the page as a routing example. The repository also includes a Netlify configuration file; that alone does not establish an active deployment.
+## Desarrollo y verificación
 
-## Stack and status
+Requiere Node >=22.12.0. La compilación usa Vite y las pruebas Vitest.
 
-React 16, React Router 5 and Create React App are declared in `package.json`. This is an incomplete practice project.
+```bash
+npm ci --ignore-scripts
+npm start
+npm test
+npm run build
+npm audit
+```
 
-## Explore locally
+El resultado de producción se conserva en `build/`. Las rutas de la aplicación
+y los recursos de `public/` se mantienen. Las variables públicas existentes
+`REACT_APP_*` siguen disponibles; nunca uses ese prefijo para secretos.
 
-Run `npm ci` and `npm start` from the repository root. Run `CI=true npm test -- --watch=false --runInBand` for tests. On Node 20, the historical webpack build runs with `NODE_OPTIONS=--openssl-legacy-provider npm run build`.
+La migración retira Create React App y su cadena de compilación sin mantenimiento.
+Las pruebas existentes comprueban el comportamiento de la aplicación.
